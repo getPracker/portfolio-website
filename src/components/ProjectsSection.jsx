@@ -3,30 +3,30 @@ import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 const projects = [
     {
         id: 1,
-        title: "A demo title",
-        description: "A demo description regarding the project",
-        image: "/projects/project_template.jpg",
-        tags: ["React", "Tailwind", "Redux"],
-        demoUrl: "#",
-        githubUrl: "#"
+        title: "AI SaaS Platform",
+        description: "A comprehensive AI-powered SaaS platform featuring multiple AI tools, user authentication, and subscription management with modern UI/UX design.",
+        image: "/projects/ai-saas-project.png",
+        tags: ["Next.js", "OpenAI", "Stripe", "Prisma", "Tailwind"],
+        demoUrl: "https://ai-saas-project-client.vercel.app/",
+        githubUrl: "https://github.com/getPracker/ai-saas-project"
     },
     {
         id: 2,
-        title: "A demo title",
-        description: "A demo description regarding the project",
-        image: "/projects/project_template.jpg",
-        tags: ["React", "Node.js", "Express.js"],
-        demoUrl: "#",
-        githubUrl: "#"
+        title: "Real-time Chat Application",
+        description: "A modern real-time chat application with user authentication, message history, and responsive design for seamless communication.",
+        image: "/projects/chat-app-project.png",
+        tags: ["React", "Socket.io", "Node.js", "Express", "MongoDB"],
+        demoUrl: "https://chat-app-client-ashy.vercel.app/login",
+        githubUrl: "https://github.com/getPracker/chat-app"
     },
     {
         id: 3,
-        title: "A demo title",
-        description: "A demo description regarding the project",
-        image: "/projects/project_template.jpg",
-        tags: ["Next.js", "Docker"],
-        demoUrl: "#",
-        githubUrl: "#"
+        title: "E-Commerce Platform",
+        description: "A full-featured e-commerce platform with product management, shopping cart, payment integration, and admin dashboard.",
+        image: "/projects/e-commerce-project.png",
+        tags: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+        demoUrl: "https://e-commerce-project-frontend-omega.vercel.app/",
+        githubUrl: "https://github.com/getPracker/e-commerce-project"
     },
 ];
 
@@ -46,29 +46,53 @@ export const ProjectsSection = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, key) => (
-                        <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
-                            <div className="h-48 overflow-hidden">
-                                <img src={project.image} alt={project.title} className="w-full h-full objct-cover transition-transform duration-500 group-hover:scale-110"/>
+                        <div key={key} className="group bg-card rounded-xl overflow-hidden shadow-lg border border-border/50 card-hover backdrop-blur-sm">
+                            <div className="h-48 overflow-hidden relative">
+                                <img 
+                                    src={project.image} 
+                                    alt={project.title} 
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    onError={(e) => {
+                                        e.target.src = "/projects/project_template.jpg";
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
 
                             <div className="p-6">
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {project.tags.map((tag) => (
-                                            <span className="px-2 py-1 text-xs font-medium  border rounded-full bg-secondary text-secondary-foreground">{tag}</span>
-                                        ))}
-                                    </div>
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {project.tags.map((tag, tagIndex) => (
+                                        <span 
+                                            key={tagIndex}
+                                            className="px-3 py-1 text-xs font-medium border rounded-full bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors duration-200"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
 
-
-                                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-                                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{project.description}</p>
 
                                 <div className="flex justify-between items-center">
-                                    <div className="flex space-x-3">
-                                        <a href={project.demoUrl} className="text-foreground/80 hover:text-primary transition-colors duration-300" target="_blank">
-                                            <ExternalLink size={20}/>
+                                    <div className="flex space-x-4">
+                                        <a 
+                                            href={project.demoUrl} 
+                                            className="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 hover:scale-105 transform" 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <ExternalLink size={18}/>
+                                            <span>Live Demo</span>
                                         </a>
-                                        <a href={project.githubUrl} className="text-foreground/80 hover:text-primary transition-colors duration-300" target="_blank">
-                                            <Github size={20}/>
+                                        <a 
+                                            href={project.githubUrl} 
+                                            className="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 hover:scale-105 transform" 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <Github size={18}/>
+                                            <span>Code</span>
                                         </a>
                                     </div>
                                 </div>

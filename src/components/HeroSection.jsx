@@ -14,10 +14,10 @@ export const HeroSection = () => {
                         <span className="opacity-0 text-primary animate-fade-in-delay-1"> Prakhar</span>
                         <span className="opacity-0 ml-2 text-gradient animate-fade-in-delay-2"> Gupta</span>
                     </h1>
-                    <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                        I build scalable web applications using the MERN stack and integrate cloud-native solutions to deliver high-performance,
+                    <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3 leading-relaxed">
+                        I build <span className="text-primary font-semibold">scalable web applications</span> using the MERN stack and integrate cloud-native solutions to deliver high-performance,
                         secure, and reliable products. From designing RESTful APIs to deploying on AWS,
-                        I bring ideas to life with clean code and  <span className="text-primary">clear</span> vision.
+                        I bring ideas to life with <span className="text-primary font-semibold">clean code</span> and <span className="text-primary font-semibold">clear vision</span>.
                     </p>
 
                     <div className="pt-4 opacity-0 animate-fade-in-delay-4">
